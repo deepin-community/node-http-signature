@@ -1,0 +1,60 @@
+Description: fix for uuid ≥ 8
+Author: Pirate Praveen <praveen@debian.org>
+Forwarded: no
+Last-Update: 2020-12-09
+
+--- a/test/header.test.js
++++ b/test/header.test.js
+@@ -5,7 +5,7 @@
+ var http = require('http');
+ 
+ var test = require('tap').test;
+-var uuid = require('uuid');
++const { v4: uuid } = require('uuid');
+ 
+ var httpSignature = require('../lib/index');
+ 
+--- a/test/parser.test.js
++++ b/test/parser.test.js
+@@ -3,7 +3,7 @@
+ var http = require('http');
+ 
+ var test = require('tap').test;
+-var uuid = require('uuid');
++const { v4: uuid } = require('uuid');
+ var jsprim = require('jsprim');
+ 
+ var httpSignature = require('../lib/index');
+--- a/test/verify.test.js
++++ b/test/verify.test.js
+@@ -7,7 +7,7 @@
+ var sshpk = require('sshpk');
+ 
+ var test = require('tap').test;
+-var uuid = require('uuid');
++const { v4: uuid } = require('uuid');
+ 
+ var httpSignature = require('../lib/index');
+ 
+--- a/test/examples.test.js
++++ b/test/examples.test.js
+@@ -7,7 +7,7 @@
+ var assert = require('assert-plus');
+ 
+ var test = require('tap').test;
+-var uuid = require('uuid');
++const { v4: uuid } = require('uuid');
+ 
+ var httpSignature = require('../lib/index');
+ 
+--- a/test/signer.test.js
++++ b/test/signer.test.js
+@@ -6,7 +6,7 @@
+ var sshpk = require('sshpk');
+ 
+ var test = require('tap').test;
+-var uuid = require('uuid');
++const { v4: uuid } = require('uuid');
+ 
+ var httpSignature = require('../lib/index');
+ 

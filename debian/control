@@ -1,0 +1,36 @@
+Source: node-http-signature
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , node-assert-plus
+ , node-jsprim
+ , node-uuid
+ , node-sshpk
+ , node-tap
+ , dh-sequence-nodejs
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-http-signature
+Vcs-Git: https://salsa.debian.org/js-team/node-http-signature.git
+Homepage: https://github.com/joyent/node-http-signature/
+Rules-Requires-Root: no
+
+Package: node-http-signature
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , node-assert-plus
+ , node-jsprim
+ , node-sshpk
+ , nodejs
+Description: Reference implementation of Joyent's HTTP Signature scheme
+ node-http-signature is a node.js library that has client and server components
+ for Joyent's HTTP Signature Scheme.
+ .
+ This library is a dependency of request, the simplest way possible to make
+ http calls.
+ .
+ Node.js is an event-based server-side JavaScript engine.
